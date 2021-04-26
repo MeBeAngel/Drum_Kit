@@ -1,13 +1,13 @@
 let instrumentItems = document.querySelectorAll(".instrument-item");
 
-function turnRight(num) {
+function wiggle(num) {
     document.querySelectorAll(".instrument-image img")[num].classList.remove("center");
     document.querySelectorAll(".instrument-image img")[num].classList.add("rotate-right");
-}
 
-function center(num) {
-    document.querySelectorAll(".instrument-image img")[num].classList.remove("rotate-right");
-    document.querySelectorAll(".instrument-image img")[num].classList.add("center");
+    setTimeout(function () {
+        document.querySelectorAll(".instrument-image img")[num].classList.remove("rotate-right");
+        document.querySelectorAll(".instrument-image img")[num].classList.add("center");
+    }, 50);
 }
 
 
@@ -21,53 +21,32 @@ for (let i = 0; i < instrumentItems.length; i++) {
         if (instrument === "snare") {
             let snare = new Audio("sounds/snare.mp3");
             snare.play();
-            turnRight(i);
-            setTimeout(function () {
-                center(i)
-            }, 50);
+            wiggle(i);
 
         } else if (instrument === "tom1") {
             let tom1 = new Audio("sounds/tom-1.mp3");
             tom1.play();
-            turnRight(i);
-            setTimeout(function () {
-                center(i)
-            }, 50);
+            wiggle(i);
         } else if (instrument === "tom2") {
             let tom2 = new Audio("sounds/tom-2.mp3");
             tom2.play();
-            turnRight(i);
-            setTimeout(function () {
-                center(i)
-            }, 50);
+            wiggle(i);
         } else if (instrument === "tom3") {
             let tom3 = new Audio("sounds/tom-3.mp3");
             tom3.play();
-            turnRight(i);
-            setTimeout(function () {
-                center(i)
-            }, 50);
+            wiggle(i);
         } else if (instrument === "tom4") {
             let tom4 = new Audio("sounds/tom-4.mp3");
             tom4.play();
-            turnRight(i);
-            setTimeout(function () {
-                center(i)
-            }, 50);
+            wiggle(i);
         } else if (instrument === "crash") {
             let crash = new Audio("sounds/crash.mp3");
             crash.play();
-            turnRight(i);
-            setTimeout(function () {
-                center(i)
-            }, 50);
+            wiggle(i);
         } else if (instrument === "kick") {
             let kick = new Audio("sounds/kick-bass.mp3");
             kick.play();
-            turnRight(i);
-            setTimeout(function () {
-                center(i)
-            }, 50);
+            wiggle(i);
         } else {
             console.log("err");
         }
@@ -83,56 +62,31 @@ document.addEventListener("keypress", (e) => {
     if (e.key === "w") {
         let snare = new Audio("sounds/snare.mp3");
         snare.play();
-        turnRight(0);
+        wiggle(0);
     } else if (e.key === "a") {
         let tom1 = new Audio("sounds/tom-1.mp3");
         tom1.play();
-        turnRight(1);
+        wiggle(1);
     } else if (e.key === "s") {
         let tom2 = new Audio("sounds/tom-2.mp3");
         tom2.play();
-        turnRight(2);
+        wiggle(2);
     } else if (e.key === "d") {
         let tom3 = new Audio("sounds/tom-3.mp3");
         tom3.play();
-        turnRight(3);
+        wiggle(3);
     } else if (e.key === "j") {
         let tom4 = new Audio("sounds/tom-4.mp3");
         tom4.play();
-        turnRight(4);
+        wiggle(4);
     } else if (e.key === "k") {
         let crash = new Audio("sounds/crash.mp3");
         crash.play();
-        turnRight(5);
+        wiggle(5);
     } else if (e.key === "l") {
         let kick = new Audio("sounds/kick-bass.mp3");
         kick.play();
-        turnRight(6);
-    } else {
-        console.log("err");
-    }
-});
-
-
-
-
-
-document.addEventListener("keyup", (e) => {
-
-    if (e.key === "w") {
-        center(0);
-    } else if (e.key === "a") {
-        center(1);
-    } else if (e.key === "s") {
-        center(2);
-    } else if (e.key === "d") {
-        center(3);
-    } else if (e.key === "j") {
-        center(4);
-    } else if (e.key === "k") {
-        center(5);
-    } else if (e.key === "l") {
-        center(6);
+        wiggle(6);
     } else {
         console.log("err");
     }
