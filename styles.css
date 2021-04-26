@@ -1,0 +1,120 @@
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+body {
+    text-align: center;
+    background-color: #65779A;
+}
+
+
+.title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0;
+}
+
+.title {
+    font-family: 'Fugaz One', cursive;
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 6px 6px #65929A;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin: 0 8px;
+    transform: rotate(-20deg);
+    filter: drop-shadow(0 0 0.75rem white);
+}
+
+.instrument-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.instrument-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    background-color: white;
+    border: solid #65929A 13px;
+    border-radius: 25px;
+}
+
+.instrument-item:hover {
+    cursor: pointer;
+    border: solid #FF4C4C 13px;
+}
+
+.instrument-letter {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Fugaz One', cursive;
+    font-size: 6rem;
+    color: #FF4C4C;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.instrument-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.instrument-image img {
+    width: 150px;
+    height: 150px;
+}
+
+
+/* Utility Classes */
+
+.rotate-right {
+    transform: rotate(20deg);
+}
+
+.center {
+    transform: rotate(0);
+}
+
+
+
+
+@media(min-width: 500px) {
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media(min-width: 1024px) {
+    .title {
+        font-size: 4.5rem;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+        margin: 0 20px;
+    }
+}
